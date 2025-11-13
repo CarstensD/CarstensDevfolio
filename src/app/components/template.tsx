@@ -1,0 +1,13 @@
+<template>
+  <div className="relative flex h-[450px] w-full flex-col items-center justify-center overflow-hidden rounded-lg lg:w-full md:w-full">
+    <p
+      className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black dark:text-white"
+    >
+      Ripple
+    </p>
+    <Ripple
+      className="bg-white/5 [mask-image:linear-gradient(to_bottom,white,transparent)]"
+      circle-class="border-[hsl(var(--primary))] bg-[#0000]/25 dark:bg-[#fff]/25 rounded-full"
+    />
+  </div>
+</template>
