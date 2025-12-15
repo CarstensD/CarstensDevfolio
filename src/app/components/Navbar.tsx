@@ -5,6 +5,7 @@ import React, { useState } from 'react'
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTheme } from '../context/ThemeContext';
+import { label } from 'framer-motion/client';
 
 const Navbar = () => {
     const {theme, toggleTheme} = useTheme();
@@ -16,9 +17,7 @@ const Navbar = () => {
 
     const menuItems = [
         { label: 'Home', href: '/' },
-        { label: 'Projects', href: '/projects' },
-        { label: 'About', href: '/about' },
-        { label: 'Blogs', href: '/blogs' },
+        { label: 'Ask Davin', href: '/ask-davin' },
         { label: 'Contact', href: '/contact' },
     ];
 

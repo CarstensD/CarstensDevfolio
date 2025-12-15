@@ -16,10 +16,10 @@ const Hero = () => {
             </div>
 
             <div className='flex justify-center space-x-4 mb-8'>
-                <Link href='/' className='text 2-xl text-gray-600 hover:text-primary  dark:text-gray-300 transition-duration-300'>
+                <Link href='https://github.com/CarstensD' target="_blank" rel="noopener noreferrer" className='text 2-xl text-gray-600 hover:text-primary  dark:text-gray-300 transition-duration-300'>
                     <FaGithub/>
                 </Link>
-                <Link href='/' className='text 2-xl text-gray-600 hover:text-primary  dark:text-gray-300 transition-duration-300'>
+                <Link href='https://www.linkedin.com/in/davin-carstens-2ab2b71a8' target="_blank" rel="noopener noreferrer" className='text 2-xl text-gray-600 hover:text-primary  dark:text-gray-300 transition-duration-300'>
                     <FaLinkedin/>
                 </Link>
             </div>
