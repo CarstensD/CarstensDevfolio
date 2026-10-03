@@ -31,6 +31,9 @@
 }
 .pauseIcon { width: 8px; height: 10px; border-left: 2px solid currentColor; border-right: 2px solid currentColor; }
 .playIcon { width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 8px solid currentColor; }
+.exportButton { right: auto; left: var(--page-gutter); }
+.exportButton:disabled { opacity: 0.6; cursor: wait; }
+.exportError { position: absolute; left: var(--page-gutter); bottom: 5rem; color: var(--text-primary); }
 @media (max-width: 767px) {
   .scene { top: 360px; }
   .poster { object-position: 72% center; }

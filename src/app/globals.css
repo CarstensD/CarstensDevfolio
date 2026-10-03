@@ -1,23 +1,6 @@
 @import "tailwindcss";
 @import "../styles/tokens.css";
 
-@theme {
-  --color-primary: #007AFF;
-  --color-secondary: #6B7280;
-  --color-dark: #1F2937;
-  --color-light: #F9FAFB;
-  --color-text: #000000;
-  --color-bg: #ffffff;
-
-  --font-sans: var(--font-geist-sans), sans-serif;
-
-  --animation-fade-in: fadeIn 0.5s ease-in-out;
-  --animation-slide-up: slideUp 0.5s ease-in-out;
-}
-
-
-@custom-variant dark (&:where(.dark, .dark *));
-
 a {
   text-decoration: none;
 }
@@ -33,45 +16,3 @@ button, input, textarea { font: inherit; }
 .page-shell { max-width: 1200px; margin: 0 auto; min-height: 75svh; padding: 10rem var(--page-gutter) 5rem; }
 .page-shell h1 { margin-bottom: 1.5rem; font-family: var(--font-display), Georgia, serif; font-size: clamp(3rem, 7vw, 5rem); font-weight: 400; line-height: 1.1; letter-spacing: -0.04em; }
 .page-shell p { max-width: 560px; color: var(--text-secondary); font-size: 1rem; line-height: 1.8; }
-
-@layer components {
-  .container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-  }
-  
-  .btn {
-    @apply px-4 py-2 rounded-md font-medium transition-colors duration-200;
-  }
-  
-  .btn-primary {
-    @apply bg-primary text-white hover:bg-primary/90;
-  }
-  
-  .btn-secondary {
-    @apply bg-secondary text-white hover:bg-secondary/90;
-  }
-  
-  .section-title {
-    @apply text-3xl font-bold mb-8 text-center;
-  }
-} 
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}

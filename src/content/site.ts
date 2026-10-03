@@ -9,7 +9,7 @@ export const site = {
   hero: {
     headline: ["Engineering", "with intent."],
     description: "Backend development. Thoughtful systems.",
-    artwork: "/images/liquid-glass.webp",
+    artwork: "/images/ribbon-poster.webp",
   },
 } as const;
 

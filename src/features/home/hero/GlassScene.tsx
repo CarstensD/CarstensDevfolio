@@ -11,6 +11,8 @@ export function GlassScene({ imageUrl }: { imageUrl: string }) {
   const paused = useRef(false);
   const [isPaused, setIsPaused] = useState(false);
   const [ready, setReady] = useState(false);
+  const [exporting, setExporting] = useState(false);
+  const [exportError, setExportError] = useState("");
 
   useEffect(() => {
     const element = canvas.current;
@@ -28,7 +30,7 @@ export function GlassScene({ imageUrl }: { imageUrl: string }) {
       try {
         const { createGlassScene } = await import("./glass-scene");
         if (disposed || current !== generation) return;
-        const scene = await createGlassScene(element, imageUrl, () => setReady(false));
+        const scene = createGlassScene(element, () => setReady(false));
         if (disposed || current !== generation) {
           scene.dispose();
           return;
@@ -51,7 +53,20 @@ export function GlassScene({ imageUrl }: { imageUrl: string }) {
       controller.current?.dispose();
       controller.current = null;
     };
-  }, [imageUrl]);
+  }, []);
+
+  const exportArtwork = async () => {
+    setExporting(true);
+    setExportError("");
+    try {
+      await controller.current?.downloadStill();
+    } catch (error) {
+      console.error("Artwork export failed.", error);
+      setExportError("Artwork export failed. Please try again.");
+    } finally {
+      setExporting(false);
+    }
+  };
 
   const toggleMotion = () => {
     paused.current = !paused.current;
@@ -69,6 +84,10 @@ export function GlassScene({ imageUrl }: { imageUrl: string }) {
         <span className={isPaused ? styles.playIcon : styles.pauseIcon} aria-hidden="true" />
         {isPaused ? "Resume motion" : "Pause motion"}
       </button>}
+      {ready && process.env.NODE_ENV === "development" && <button
+        className={`${styles.motionButton} ${styles.exportButton}`} disabled={exporting}
+        onClick={exportArtwork}>{exporting ? "Rendering artwork…" : "Export 8K artwork"}</button>}
+      {exportError && <p className={styles.exportError} role="alert">{exportError}</p>}
     </>
   );
 }
