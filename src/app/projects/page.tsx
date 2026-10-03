@@ -1,7 +1,8 @@
-const Projects = () => {
-    return (
-        <div>Projects Page</div>
-    )
-}
+import type { Metadata } from "next";
+import { WorkSection } from "@/features/work/WorkSection";
 
-export default Projects;
+export const metadata: Metadata = { title: "Work" };
+
+export default function ProjectsPage() {
+  return <WorkSection />;
+}

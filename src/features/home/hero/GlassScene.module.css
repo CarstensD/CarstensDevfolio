@@ -1,0 +1,40 @@
+.scene { position: absolute; z-index: -1; inset: 0; overflow: hidden; }
+.poster, .canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.poster { object-fit: cover; object-position: center; }
+.canvas { opacity: 0; transition: opacity 900ms; }
+.ready { opacity: 1; }
+.scene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgb(6 9 13 / 75%), rgb(6 9 13 / 44%) 32%, transparent 60%), linear-gradient(0deg, var(--surface-void), transparent 14%);
+}
+.motionButton {
+  position: absolute;
+  z-index: 3;
+  bottom: 2.2rem;
+  right: var(--page-gutter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  min-height: 44px;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  background: rgb(9 15 24 / 55%);
+  backdrop-filter: blur(12px);
+  color: #c8d3e1;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+.pauseIcon { width: 8px; height: 10px; border-left: 2px solid currentColor; border-right: 2px solid currentColor; }
+.playIcon { width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 8px solid currentColor; }
+@media (max-width: 767px) {
+  .scene { top: 360px; }
+  .poster { object-position: 72% center; }
+  .scene::after { background: linear-gradient(180deg, var(--surface-void), rgb(6 9 13 / 60%) 14%, transparent 35%, transparent 78%, var(--surface-void)); }
+  .motionButton { bottom: 1.2rem; font-size: 0.75rem; }
+}
+@media (prefers-reduced-motion: reduce) { .canvas { transition: none; } }

@@ -1,0 +1,14 @@
+:root {
+  color-scheme: dark;
+  --surface-void: #06090d;
+  --surface-glass: #15202e;
+  --text-primary: #f3f4f6;
+  --text-secondary: #b0bccb;
+  --text-subtle: #8c9aab;
+  --light-ice: #b9d8ff;
+  --light-amber: #cda782;
+  --glass-border: rgb(202 220 242 / 22%);
+  --page-gutter: clamp(1.5rem, 5.5vw, 7rem);
+  --page-width: 1600px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}

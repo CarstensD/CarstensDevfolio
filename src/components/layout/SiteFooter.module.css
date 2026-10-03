@@ -1,0 +1,18 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 1.8rem var(--page-gutter);
+  color: var(--text-subtle);
+  font-size: 0.8rem;
+  border-top: 1px solid rgb(192 217 249 / 8%);
+}
+.footer nav { display: flex; gap: 1.5rem; }
+.footer a { display: inline-flex; align-items: center; min-height: 44px; }
+.footer a:hover { color: var(--text-primary); }
+@media (max-width: 600px) {
+  .footer { flex-direction: column-reverse; align-items: flex-start; gap: 0.4rem; padding-block: 1.2rem; }
+}

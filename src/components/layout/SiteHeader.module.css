@@ -1,0 +1,92 @@
+.header {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--page-width);
+  padding: 2.1rem var(--page-gutter);
+}
+
+.brand {
+  color: var(--text-primary);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: -0.1em;
+  padding-right: 0.2em;
+}
+
+.navigation {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  padding: 0.35rem 0.6rem;
+  background: linear-gradient(145deg, rgb(105 130 163 / 19%), rgb(37 49 68 / 28%), rgb(10 15 22 / 72%));
+  backdrop-filter: blur(22px);
+  box-shadow: inset 0 1px 0 rgb(240 246 255 / 10%), 0 8px 32px rgb(0 0 0 / 12%);
+}
+
+.navigation a {
+  padding: 0.7rem 1.15rem;
+  border-radius: 999px;
+  color: #dbe2eb;
+  font-size: 0.875rem;
+  transition: color 200ms, background 200ms;
+}
+
+.navigation a:hover, .navigation a[aria-current="page"] { color: white; background: rgb(191 216 255 / 9%); }
+.location { color: var(--text-subtle); font-size: 0.8rem; letter-spacing: 0.025em; }
+.menuButton { display: none; }
+
+@media (max-width: 767px) {
+  .header { padding: 1.7rem var(--page-gutter); }
+  .brand { font-size: 1.8rem; }
+  .location { display: none; }
+  .menuButton {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    background: rgb(135 164 201 / 5%);
+    color: var(--text-primary);
+    cursor: pointer;
+  }
+  .menuIcon, .closeIcon { position: relative; width: 17px; height: 12px; }
+  .menuIcon::before, .menuIcon::after, .closeIcon::before, .closeIcon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 17px;
+    height: 1px;
+    background: currentColor;
+  }
+  .menuIcon::before { top: 2px; }
+  .menuIcon::after { bottom: 2px; }
+  .closeIcon::before { top: 5px; transform: rotate(45deg); }
+  .closeIcon::after { top: 5px; transform: rotate(-45deg); }
+  .navigation {
+    display: none;
+    left: auto;
+    right: var(--page-gutter);
+    top: 5.4rem;
+    transform: none;
+    min-width: 210px;
+    border-radius: 20px;
+    padding: 0.6rem;
+    background-color: rgb(12 19 29 / 92%);
+  }
+  .open { display: flex; flex-direction: column; align-items: stretch; }
+  .navigation a { min-height: 48px; padding: 0.9rem 1rem; }
+}

@@ -1,0 +1,9 @@
+.contact { padding-bottom: 4rem; }
+.contact .eyebrow { color: var(--text-subtle); letter-spacing: 0.22em; font-size: 0.8rem; margin-bottom: 2rem; }
+.actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2.5rem; }
+.details { display: flex; flex-wrap: wrap; gap: 2rem 4rem; margin-top: 4.5rem; padding-top: 2rem; border-top: 1px solid var(--glass-border); }
+.details dt { font-size: 0.8rem; color: var(--text-subtle); margin-bottom: 0.5rem; }
+.details dd { font-size: 0.9rem; margin: 0; }
+.details a { display: inline-flex; align-items: center; min-height: 44px; overflow-wrap: anywhere; }
+.details a:hover { color: var(--light-ice); }
+@media (max-width: 600px) { .details { flex-direction: column; gap: 1rem; } .actions { flex-direction: column; align-items: flex-start; } }
